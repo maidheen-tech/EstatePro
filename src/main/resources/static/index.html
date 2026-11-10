@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c35">
+  <meta name="description" content="Find a place you'll love to call home. Explore exceptional homes and commercial properties with EstatePro.">
+  <title>EstatePro — Discover Spaces. Build Futures.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="EstatePro home">
+      <img src="/assets/logo/estatepro-mark.svg" width="38" height="38" alt="">
+      <span>ESTATE<span class="brand-gold">PRO</span><small>DISCOVER SPACES. BUILD FUTURES.</small></span>
+    </a>
+    <button class="mobile-menu" data-action="menu" aria-label="Open navigation">☰</button>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home" data-action="home">Home</a>
+      <a class="nav-link" href="#homes" data-action="browse" data-listing="For Sale">Buy</a>
+      <a class="nav-link" href="#homes" data-action="browse" data-listing="For Rent">Rent</a>
+      <a class="nav-link" href="#homes" data-action="browse" data-type="Commercial office">Commercial</a>
+      <a class="nav-link" href="#agents" data-action="agents">Agents</a>
+      <a class="nav-link" href="#about" data-action="about">About</a>
+      <a class="nav-link" href="#contact" data-action="contact">Contact</a>
+    </nav>
+    <div class="header-actions" id="header-actions">
+      <button class="button button-quiet" data-action="login">Log in</button>
+      <button class="button button-dark button-small" data-action="register">Get started <span aria-hidden="true">↗</span></button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="hero" id="home">
+      <div class="hero-image"></div>
+      <div class="hero-content">
+        <p class="eyebrow eyebrow-light"><span class="eyebrow-rule"></span> A MORE CONSIDERED WAY HOME</p>
+        <h1>Find a place<br>you’ll love to <em>call home.</em></h1>
+        <p class="hero-copy">Thoughtfully selected homes, meaningful connections, and a smoother move into your next chapter.</p>
+        <div class="hero-note"><span class="note-icon">✳</span> Curated homes. Personal guidance. Always.</div>
+      </div>
+      <div class="hero-caption"><span>01</span> / THE ART OF LIVING WELL <i></i> CHENNAI, INDIA</div>
+      <div class="search-panel">
+        <form class="search-form" id="search-form">
+          <label class="search-field"><span>LOOKING TO</span>
+            <select name="listing"><option value="">Buy or rent</option><option>For Sale</option><option>For Rent</option><option>For Lease</option></select>
+          </label>
+          <label class="search-field location-field"><span>LOCATION</span>
+            <input name="city" placeholder="City, neighbourhood" autocomplete="off">
+          </label>
+          <label class="search-field"><span>PROPERTY TYPE</span>
+            <select name="type"><option value="">Any property</option><option>Apartment</option><option>Villa</option><option>Independent house</option><option>Commercial office</option></select>
+          </label>
+          <label class="search-field"><span>MAX. BUDGET</span>
+            <select name="maxPrice"><option value="">No limit</option><option value="10000000">₹1 crore</option><option value="20000000">₹2 crore</option><option value="40000000">₹4 crore</option><option value="75000000">₹7.5 crore</option></select>
+          </label>
+          <button class="button button-gold search-button" type="submit"><span aria-hidden="true">⌕</span> Find a home</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="EstatePro service highlights">
+      <span><b>01</b> Carefully curated properties</span><i></i>
+      <span><b>02</b> Verified local expertise</span><i></i>
+      <span><b>03</b> Guidance at every step</span>
+    </section>
+
+    <section class="section section-properties" id="homes">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="eyebrow-rule"></span> THE ESTATEPRO COLLECTION</p>
+          <h2>Spaces with <em>a story.</em></h2>
+          <p class="section-copy" id="results-label">Discover homes selected for the way you want to live.</p></div>
+        <button class="text-link" data-action="browse">Explore all homes <span>↗</span></button>
+      </div>
+      <div class="filter-row">
+        <label class="filter-search"><span aria-hidden="true">⌕</span><input id="quick-search" placeholder="Search a neighbourhood or city"></label>
+        <select id="sort-select" aria-label="Sort properties"><option value="latest">Recently added</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="area">Largest area</option></select>
+        <button class="filter-chip" data-action="clear-filters">Clear filters</button>
+      </div>
+      <div class="property-grid" id="property-grid" aria-live="polite">
+        <div class="loading-state"><span class="spinner"></span> Finding exceptional spaces…</div>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </section>
+
+    <section class="editorial">
+      <div class="editorial-photo"><img src="/assets/images/properties/interior-01.jpg" alt="Sunlit living room in a thoughtfully designed home" loading="lazy"><span>THE WELL-LIVED HOME / 2026</span></div>
+      <div class="editorial-copy"><p class="eyebrow eyebrow-light"><span class="eyebrow-rule"></span> MORE THAN AN ADDRESS</p>
+        <h2>Where your next<br>chapter <em>begins.</em></h2>
+        <p>Finding the right home is personal. We pair an intimate knowledge of the market with people who take the time to understand what home means to you.</p>
+        <button class="button button-outline-light" data-action="register">Find your place <span>↗</span></button>
+        <div class="editorial-stat"><strong>2,400<span>+</span></strong><small>homes &amp; counting</small></div>
+      </div>
+    </section>
+
+    <section class="section locations-section" id="about">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="eyebrow-rule"></span> PLACES TO PUT DOWN ROOTS</p><h2>Find your <em>kind of place.</em></h2></div>
+        <p class="section-copy section-copy-right">Local insight, wherever life takes you.</p>
+      </div>
+      <div class="location-grid">
+        <button class="location-card location-chennai" data-action="city" data-city="Chennai"><span>01 / TAMIL NADU</span><strong>Chennai</strong><small>Coastal calm, city soul</small><i>↗</i></button>
+        <button class="location-card location-bengaluru" data-action="city" data-city="Bengaluru"><span>02 / KARNATAKA</span><strong>Bengaluru</strong><small>Room to grow, space to breathe</small><i>↗</i></button>
+        <button class="location-card location-hyderabad" data-action="city" data-city="Hyderabad"><span>03 / TELANGANA</span><strong>Hyderabad</strong><small>A city with a point of view</small><i>↗</i></button>
+        <button class="location-card location-coimbatore" data-action="city" data-city="Coimbatore"><span>04 / TAMIL NADU</span><strong>Coimbatore</strong><small>A gentler pace, a brighter future</small><i>↗</i></button>
+      </div>
+    </section>
+
+    <section class="section agents-section" id="agents">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="eyebrow-rule"></span> PEOPLE WHO KNOW THE WAY</p><h2>Meet your <em>local experts.</em></h2>
+          <p class="section-copy">A good move starts with someone who listens.</p></div>
+      </div>
+      <div class="agent-grid" id="agent-grid"><div class="loading-state"><span class="spinner"></span> Meeting our local specialists…</div></div>
+    </section>
+
+    <section class="promise-section">
+      <div><p class="eyebrow"><span class="eyebrow-rule"></span> THE ESTATEPRO DIFFERENCE</p><h2>Good guidance<br>changes <em>everything.</em></h2></div>
+      <div class="promise-grid">
+        <article><span>01</span><h3>A considered collection</h3><p>Homes selected for their enduring character, thoughtful design, and the life they make possible.</p></article>
+        <article><span>02</span><h3>People who listen</h3><p>Local specialists who understand the details, know the neighbourhood, and put your needs first.</p></article>
+        <article><span>03</span><h3>Confidence at every step</h3><p>Clear communication and a human touch from the first viewing to the moment you turn the key.</p></article>
+      </div>
+    </section>
+
+    <section class="cta-band"><div><p class="eyebrow eyebrow-light"><span class="eyebrow-rule"></span> YOUR NEXT CHAPTER STARTS HERE</p><h2>Ready to find <em>your place?</em></h2></div>
+      <button class="button button-gold" data-action="register">Let’s get started <span>↗</span></button></section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-intro"><p class="eyebrow"><span class="eyebrow-rule"></span> WE’RE HERE TO HELP</p><h2>Let’s talk about <em>what’s next.</em></h2>
+        <p>Tell us what you’re looking for. Our team will be in touch to help you find your next chapter.</p>
+        <a href="mailto:hello@estatepro.local">hello@estatepro.local <span>↗</span></a></div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-grid">
+          <div class="form-field"><label for="contact-name">Your name</label><input id="contact-name" name="name" required maxlength="120" autocomplete="name"></div>
+          <div class="form-field"><label for="contact-email">Email address</label><input id="contact-email" name="email" type="email" required maxlength="190" autocomplete="email"></div>
+          <div class="form-field full"><label for="contact-subject">I’m interested in</label><select id="contact-subject" name="subject"><option>Finding a home</option><option>Renting a home</option><option>Listing my property</option><option>Speaking with an advisor</option><option>Something else</option></select></div>
+          <div class="form-field full"><label for="contact-message">A little more about it</label><textarea id="contact-message" name="message" required maxlength="3000" placeholder="How can we help?"></textarea></div>
+        </div><p class="form-error" hidden></p><button class="button button-dark" type="submit">Send a note <span>↗</span></button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand"><a class="brand brand-light" href="#"><img src="/assets/logo/estatepro-mark.svg" width="38" height="38" alt=""><span>ESTATE<span class="brand-gold">PRO</span><small>DISCOVER SPACES. BUILD FUTURES.</small></span></a>
+        <p>A more considered way to find the place you’ll call home.</p></div>
+      <div class="footer-links"><div><strong>Explore</strong><a href="#homes" data-action="browse">Buy a home</a><a href="#homes" data-action="browse" data-listing="For Rent">Find a rental</a><a href="#homes" data-action="browse" data-type="Commercial office">Commercial</a></div>
+        <div><strong>EstatePro</strong><a href="#about">Our story</a><a href="#agents">Our advisors</a><a href="#contact" data-action="contact">Get in touch</a></div>
+        <div><strong>For owners</strong><a href="#" data-action="register">List your property</a><a href="#" data-action="login">Agent portal</a><a href="/swagger-ui.html">API documentation</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 ESTATEPRO. DISCOVER SPACES. BUILD FUTURES.</span><span>MADE FOR THE WAY YOU WANT TO LIVE.</span></div>
+  </footer>
+
+  <dialog class="app-dialog" id="app-dialog" aria-label="EstatePro dialog"><div id="dialog-content"></div></dialog>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

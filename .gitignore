@@ -1,0 +1,11 @@
+target/
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.env
+*.log
+uploads/
+*.iml
+*.class
+*.jar
+node_modules/
